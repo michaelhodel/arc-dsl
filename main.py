@@ -6,6 +6,7 @@ import tqdm
 import arc_types
 import constants
 import dsl
+import tests
 import solvers
 
 
@@ -39,6 +40,16 @@ def get_functions(path):
             function = row.split('def ')[1].split('(')[0]
             functions.append(function)
     return functions
+
+
+def run_dsl_tests(dsl_module, test_module):
+    """ test DSL primitives """
+    dsl_functions = get_functions(dsl_module.__file__)
+    test_functions = get_functions(test_module.__file__)
+    expected = set([f'test_{f}' for f in dsl_functions])
+    assert set(test_functions) == expected
+    for fun in test_functions:
+        getattr(test_module, fun)()
 
 
 def test_solvers_formatting(solvers_module, dsl_module):
@@ -106,7 +117,7 @@ def test_solvers_correctness(data, solvers_module):
 
 def main():
     data = get_data(train=True)
-    
+    run_dsl_tests(dsl, tests)
     test_solvers_formatting(solvers, dsl)
     test_solvers_correctness(data, solvers)
 
