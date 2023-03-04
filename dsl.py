@@ -136,7 +136,7 @@ def difference(
     b: FrozenSet
 ) -> FrozenSet:
     """ set difference """
-    return a - b
+    return type(a)(e for e in a if e not in b)
 
 
 def dedupe(
