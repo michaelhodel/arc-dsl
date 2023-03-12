@@ -714,6 +714,8 @@ def shift(
     directions: IntegerTuple
 ) -> Patch:
     """ shift patch """
+    if len(patch) == 0:
+        return patch
     di, dj = directions
     if isinstance(next(iter(patch))[1], tuple):
         return frozenset((value, (i + di, j + dj)) for value, (i, j) in patch)
