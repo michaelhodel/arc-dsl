@@ -726,6 +726,8 @@ def normalize(
     patch: Patch
 ) -> Patch:
     """ moves upper left corner to origin """
+    if len(patch) == 0:
+        return patch
     return shift(patch, (-uppermost(patch), -leftmost(patch)))
 
 
