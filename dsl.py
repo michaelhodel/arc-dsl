@@ -1430,6 +1430,8 @@ def box(
     patch: Patch
 ) -> Indices:
     """ outline of patch """
+    if len(patch) == 0:
+        return patch
     ai, aj = ulcorner(patch)
     bi, bj = lrcorner(patch)
     si, sj = min(ai, bi), min(aj, bj)
