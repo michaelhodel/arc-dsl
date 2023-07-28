@@ -3593,23 +3593,11 @@ def solve_673ef223(I):
 
 def solve_f5b8619d(I):
     x1 = leastcolor(I)
-    x2 = width(I)
-    x3 = height(I)
-    x4 = righthalf(I)
-    x5 = halve(x2)
-    x6 = even(x2)
-    x7 = branch(x6, identity, increment)
-    x8 = x7(x5)
-    x9 = astuple(x3, x8)
-    x10 = crop(I, ORIGIN, x9)
-    x11 = vconcat(x10, x10)
-    x12 = vconcat(x4, x4)
-    x13 = hconcat(x12, x11)
-    x14 = hconcat(x11, x13)
-    x15 = hconcat(x14, x12)
-    x16 = ofcolor(x15, x1)
-    x17 = mapply(vfrontier, x16)
-    O = underfill(x15, EIGHT, x17)
+    x2 = ofcolor(I, x1)
+    x3 = mapply(vfrontier, x2)
+    x4 = underfill(I, EIGHT, x3)
+    x5 = hconcat(x4, x4)
+    O = vconcat(x5, x5)
     return O
 
 
