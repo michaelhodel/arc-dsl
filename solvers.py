@@ -1157,13 +1157,8 @@ def solve_54d82841(I):
 
 def solve_60b61512(I):
     x1 = objects(I, T, T, T)
-    x2 = rbind(subgrid, I)
-    x3 = compose(asindices, x2)
-    x4 = fork(shift, x3, ulcorner)
-    x5 = mapply(x4, x1)
-    x6 = fill(I, SEVEN, x5)
-    x7 = merge(x1)
-    O = paint(x6, x7)
+    x2 = mapply(delta, x1)
+    O = fill(I, SEVEN, x2)
     return O
 
 
