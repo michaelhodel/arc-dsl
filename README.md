@@ -38,7 +38,7 @@ These are the important files:
 ## Discord
 
 I hang out in the ARC channels on [Lab42](https://discord.gg/waRCYPEc6C) and [Yannic Kilcher](https://ykilcher.com/discord).
-Great places for discussing prompt technique.
+Great places for discussing ARC.
 
 ## License
 
