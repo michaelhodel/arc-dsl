@@ -1,4 +1,6 @@
-# Michael's DSL for ARC (Abstraction and Reasoning Corpus)
+# Domain Specific Language for the Abstraction and Reasoning Corpus (ARC-DSL)
+
+The DSL was created with the aim of being expressive enough to allow programs solving arbitrary ARC tasks, and generic, i.e. consisting of only few primitives, each useful for many tasks (see ```dsl.py```). As a proof of concept, solver programs for the training tasks were written (see ```solvers.py```). See ```arc_dsl_writeup.pdf``` for a more detailed description of the work.
 
 <table>
 <tr>
@@ -22,10 +24,6 @@
 Handcrafted solutions for ARC tasks.
 You may be wondering what is going on in a particular task, and you can see its implementation.
 The [`solvers.py`](solvers.py) has the shortest solutions at the top, and the longest at the bottom.
-
----
-
-The DSL was created with the aim of being expressive enough to allow programs solving arbitrary ARC tasks, and generic, i.e. consisting of only few primitives, each useful for many tasks (see ```dsl.py```). As a proof of concept, solver programs for the training tasks were written (see ```solvers.py```).
 
 ## Repo structure
 
