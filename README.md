@@ -7,7 +7,7 @@ The DSL was created with the aim of being expressive enough to allow programs so
 
 ![Tux, the Linux mascot](00d62c1b.png)
 
-```
+```python
 def solve_00d62c1b(I):
     x1 = objects(I, T, F, F)
     x2 = colorfilter(x1, ZERO)
