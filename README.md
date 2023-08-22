@@ -1,8 +1,10 @@
 # Michael's DSL for ARC (Abstraction and Reasoning Corpus)
 
-Examples:
-
 <table>
+<tr>
+<th>Code</th>
+<th>Task</th>
+</tr>
 <tr>
 <td><img src="documents/arc-561rdbcf-code.jpg"></td>
 <td><img src="documents/arc-561rdbcf-show.jpg"></td>
