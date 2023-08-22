@@ -19,7 +19,7 @@
 </tr>
 </table>
 
-All 800 tasks in the ARC 1 dataset, has a handcrafted solution.
+Handcrafted solutions for ARC tasks.
 You may be wondering what is going on in a particular task, and you can see its implementation.
 The [`solvers.py`](solvers.py) has the shortest solutions at the top, and the longest at the bottom.
 
@@ -34,13 +34,8 @@ These are the important files:
 * [`constants.py`](constants.py) - Often used constants.
 * [`dsl.py`](dsl.py) - The code for expressing a solution.
 * [`main.py`](main.py) - description.
-* [`solvers.py`](solvers.py) - All 800 tasks have a solution here.
+* [`solvers.py`](solvers.py) - description.
 * [`test.py`](tests.py) - Testing the DSL is behaving correctly.
-
-## Discord
-
-I hang out in the ARC channels on [Lab42](https://discord.gg/waRCYPEc6C) and [Yannic Kilcher](https://ykilcher.com/discord).
-Great places for discussing ARC.
 
 ## License
 
