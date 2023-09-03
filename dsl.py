@@ -1365,6 +1365,8 @@ def backdrop(
     patch: Patch
 ) -> Indices:
     """ indices in bounding box of patch """
+    if len(patch) == 0:
+        return frozenset({})
     indices = toindices(patch)
     si, sj = ulcorner(indices)
     ei, ej = lrcorner(patch)
@@ -1375,6 +1377,8 @@ def delta(
     patch: Patch
 ) -> Indices:
     """ indices in bounding box but not part of patch """
+    if len(patch) == 0:
+        return frozenset({})
     return backdrop(patch) - toindices(patch)
 
 
