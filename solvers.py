@@ -2553,16 +2553,15 @@ def solve_eb281b96(I):
 
 def solve_ff28f65a(I):
     x1 = objects(I, T, F, T)
-    x2 = colorfilter(x1, TWO)
-    x3 = size(x2)
-    x4 = double(x3)
-    x5 = interval(ZERO, x4, TWO)
-    x6 = apply(tojvec, x5)
-    x7 = astuple(ONE, NINE)
-    x8 = canvas(ZERO, x7)
-    x9 = fill(x8, ONE, x6)
-    x10 = hsplit(x9, THREE)
-    O = merge(x10)
+    x2 = size(x1)
+    x3 = double(x2)
+    x4 = interval(ZERO, x3, TWO)
+    x5 = apply(tojvec, x4)
+    x6 = astuple(ONE, NINE)
+    x7 = canvas(ZERO, x6)
+    x8 = fill(x7, ONE, x5)
+    x9 = hsplit(x8, THREE)
+    O = merge(x9)
     return O
 
 
