@@ -3232,21 +3232,19 @@ def solve_6cf79266(I):
 
 
 def solve_a87f7484(I):
-    x1 = palette(I)
+    x1 = numcolors(I)
     x2 = dmirror(I)
     x3 = portrait(I)
-    x4 = branch(x3, x2, I)
-    x5 = size(x1)
-    x6 = decrement(x5)
-    x7 = hsplit(x4, x6)
+    m4 = branch(x3, dmirror, identity)
+    x5 = m4(I)
+    x6 = decrement(x1)
+    x7 = hsplit(x5, x6)
     x8 = rbind(ofcolor, ZERO)
     x9 = apply(x8, x7)
-    x10 = mostcommon(x9)
+    x10 = leastcommon(x9)
     x11 = matcher(x8, x10)
-    x12 = compose(flip, x11)
-    x13 = extract(x7, x12)
-    x14 = dmirror(x13)
-    O = branch(x3, x14, x13)
+    x12 = extract(x7, x11)
+    O = m4(x12)
     return O
 
 
