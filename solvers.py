@@ -3251,10 +3251,10 @@ def solve_a87f7484(I):
 def solve_4093f84a(I):
     x1 = leastcolor(I)
     x2 = replace(I, x1, FIVE)
-    x3 = rot270(x2)
-    x4 = ofcolor(I, FIVE)
-    x5 = portrait(x4)
-    x6 = branch(x5, x2, x3)
+    x3 = ofcolor(I, FIVE)
+    x4 = portrait(x3)
+    m5 = branch(x4, identity, dmirror)
+    x6 = m5(x2)
     x7 = lefthalf(x6)
     x8 = righthalf(x6)
     x9 = rbind(order, identity)
@@ -3262,8 +3262,7 @@ def solve_4093f84a(I):
     x11 = apply(x9, x7)
     x12 = apply(x10, x8)
     x13 = hconcat(x11, x12)
-    x14 = rot90(x13)
-    O = branch(x5, x13, x14)
+    O = m5(x13)
     return O
 
 
