@@ -2717,18 +2717,15 @@ def solve_05269061(I):
 
 def solve_95990924(I):
     x1 = objects(I, T, F, T)
-    x2 = apply(ulcorner, x1)
-    x3 = apply(urcorner, x1)
-    x4 = apply(llcorner, x1)
-    x5 = apply(lrcorner, x1)
-    x6 = shift(x2, NEG_UNITY)
-    x7 = shift(x3, UP_RIGHT)
-    x8 = shift(x4, DOWN_LEFT)
-    x9 = shift(x5, UNITY)
-    x10 = fill(I, ONE, x6)
-    x11 = fill(x10, TWO, x7)
-    x12 = fill(x11, THREE, x8)
-    O = fill(x12, FOUR, x9)
+    x2 = apply(outbox, x1)
+    x3 = apply(ulcorner, x2)
+    x4 = apply(urcorner, x2)
+    x5 = apply(llcorner, x2)
+    x6 = apply(lrcorner, x2)
+    x7 = fill(I, ONE, x3)
+    x8 = fill(x7, TWO, x4)
+    x9 = fill(x8, THREE, x5)
+    O = fill(x9, FOUR, x6)
     return O
 
 
