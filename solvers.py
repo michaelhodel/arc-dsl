@@ -2836,14 +2836,7 @@ def solve_9edfc990(I):
     x4 = rbind(adjacent, x3)
     x5 = mfilter(x2, x4)
     x6 = recolor(ONE, x5)
-    x7 = paint(I, x6)
-    x8 = add(NINE, FOUR)
-    x9 = astuple(SIX, x8)
-    x10 = initset(x9)
-    x11 = fill(x7, ZERO, x10)
-    x12 = index(x7, x9)
-    x13 = equality(x12, ONE)
-    O = branch(x13, x11, x7)
+    O = paint(I, x6)
     return O
 
 
