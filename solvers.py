@@ -3267,22 +3267,14 @@ def solve_4093f84a(I):
 
 
 def solve_ba26e723(I):
-    x1 = width(I)
-    x2 = hsplit(I, x1)
-    x3 = interval(ZERO, x1, ONE)
-    x4 = rbind(divide, THREE)
-    x5 = rbind(multiply, THREE)
-    x6 = compose(x5, x4)
-    x7 = fork(equality, identity, x6)
-    x8 = apply(x7, x3)
-    x9 = rbind(ofcolor, FOUR)
-    x10 = apply(x9, x2)
-    x11 = apply(tojvec, x3)
-    x12 = papply(shift, x10, x11)
-    x13 = pair(x8, x12)
-    x14 = sfilter(x13, first)
-    x15 = mapply(last, x14)
-    O = fill(I, SIX, x15)
+    x1 = rbind(divide, THREE)
+    x2 = rbind(multiply, THREE)
+    x3 = compose(x2, x1)
+    x4 = fork(equality, identity, x3)
+    x5 = compose(x4, last)
+    x6 = ofcolor(I, FOUR)
+    x7 = sfilter(x6, x5)
+    O = fill(I, SIX, x7)
     return O
 
 
