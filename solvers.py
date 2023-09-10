@@ -2516,9 +2516,8 @@ def solve_c444b776(I):
     x6 = normalize(x5)
     x7 = lbind(shift, x6)
     x8 = compose(x7, ulcorner)
-    x9 = remove(x3, x2)
-    x10 = mapply(x8, x9)
-    O = paint(I, x10)
+    x9 = mapply(x8, x2)
+    O = paint(I, x9)
     return O
 
 
