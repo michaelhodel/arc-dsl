@@ -2581,16 +2581,12 @@ def solve_7e0986d6(I):
 
 def solve_09629e4f(I):
     x1 = objects(I, F, T, T)
-    x2 = rbind(subgrid, I)
-    x3 = apply(x2, x1)
-    x4 = argmin(x3, numcolors)
-    x5 = upscale(x4, FOUR)
+    x2 = argmin(x1, numcolors)
+    x3 = normalize(x2)
+    x4 = upscale(x3, FOUR)
+    x5 = paint(I, x4)
     x6 = ofcolor(I, FIVE)
-    x7 = shift(x6, UNITY)
-    x8 = fill(x5, FIVE, x7)
-    x9 = shape(x8)
-    x10 = decrement(x9)
-    O = crop(x8, UNITY, x10)
+    O = fill(x5, FIVE, x6)
     return O
 
 
