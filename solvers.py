@@ -4455,29 +4455,15 @@ def solve_a48eeaf7(I):
 
 
 def solve_eb5a1d5d(I):
-    x1 = objects(I, T, F, F)
-    x2 = argmin(x1, size)
-    x3 = color(x2)
-    x4 = compose(invert, width)
-    x5 = order(x1, x4)
-    x6 = apply(color, x5)
-    x7 = size(x5)
-    x8 = double(x7)
-    x9 = decrement(x8)
-    x10 = interval(ZERO, x7, ONE)
-    x11 = pair(x10, x10)
-    x12 = decrement(x9)
-    x13 = interval(x12, ZERO, NEG_TWO)
-    x14 = papply(add, x13, x10)
-    x15 = order(x14, invert)
-    x16 = pair(x15, x15)
-    x17 = pair(x11, x16)
-    x18 = apply(box, x17)
-    x19 = mpapply(recolor, x6, x18)
-    x20 = astuple(x9, x9)
-    x21 = canvas(ZERO, x20)
-    x22 = paint(x21, x19)
-    O = replace(x22, ZERO, x3)
+    x1 = compose(dmirror, dedupe)
+    x2 = x1(I)
+    x3 = x1(x2)
+    x4 = fork(remove, last, identity)
+    x5 = compose(hmirror, x4)
+    x6 = fork(vconcat, identity, x5)
+    x7 = x6(x3)
+    x8 = dmirror(x7)
+    O = x6(x8)
     return O
 
 
