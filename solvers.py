@@ -4332,28 +4332,16 @@ def solve_d89b689b(I):
 
 
 def solve_746b3537(I):
-    x1 = rot90(I)
-    x2 = objects(I, T, F, F)
-    x3 = sfilter(x2, vline)
-    x4 = compose(positive, size)
-    x5 = x4(x3)
-    x6 = branch(x5, x1, I)
-    x7 = height(x6)
-    x8 = astuple(x7, ONE)
-    x9 = crop(x6, ORIGIN, x8)
-    x10 = objects(x9, T, F, F)
-    x11 = asindices(x9)
-    x12 = apply(center, x10)
-    x13 = difference(x11, x12)
-    x14 = fill(x9, ZERO, x13)
-    x15 = vsplit(x14, x7)
-    x16 = canvas(ZERO, UNITY)
-    x17 = rbind(equality, x16)
-    x18 = compose(flip, x17)
-    x19 = sfilter(x15, x18)
-    x20 = merge(x19)
-    x21 = dmirror(x20)
-    O = branch(x5, x21, x20)
+    x1 = chain(size, dedupe, first)
+    x2 = x1(I)
+    x3 = equality(x2, ONE)
+    x4 = branch(x3, dmirror, identity)
+    x5 = x4(I)
+    x6 = objects(x5, T, F, F)
+    x7 = order(x6, leftmost)
+    x8 = apply(color, x7)
+    x9 = repeat(x8, ONE)
+    O = x4(x9)
     return O
 
 
