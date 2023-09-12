@@ -2843,18 +2843,15 @@ def solve_9edfc990(I):
 def solve_a65b410d(I):
     x1 = ofcolor(I, TWO)
     x2 = urcorner(x1)
-    x3 = add(x2, UP_RIGHT)
-    x4 = add(x2, DOWN_LEFT)
-    x5 = shoot(x3, UP_RIGHT)
-    x6 = shoot(x4, DOWN_LEFT)
-    x7 = fill(I, THREE, x5)
-    x8 = fill(x7, ONE, x6)
-    x9 = objects(x8, T, F, T)
-    x10 = rbind(shoot, LEFT)
-    x11 = compose(x10, urcorner)
-    x12 = fork(recolor, color, x11)
-    x13 = mapply(x12, x9)
-    O = paint(x8, x13)
+    x3 = shoot(x2, UP_RIGHT)
+    x4 = shoot(x2, DOWN_LEFT)
+    x5 = underfill(I, THREE, x3)
+    x6 = underfill(x5, ONE, x4)
+    x7 = rbind(shoot, LEFT)
+    x8 = mapply(x7, x3)
+    x9 = mapply(x7, x4)
+    x10 = underfill(x6, ONE, x9)
+    O = underfill(x10, THREE, x8)
     return O
 
 
