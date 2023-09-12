@@ -5098,16 +5098,7 @@ def solve_469497ad(I):
     x15 = underfill(x3, TWO, x14)
     x16 = objects(x15, T, F, T)
     x17 = argmax(x16, lrcorner)
-    x18 = urcorner(x17)
-    x19 = tojvec(NEG_TWO)
-    x20 = add(x18, x19)
-    x21 = connect(x18, x20)
-    x22 = toobject(x21, x15)
-    x23 = shift(x22, UP)
-    x24 = color(x23)
-    x25 = equality(x24, SIX)
-    x26 = branch(x25, x23, x17)
-    O = paint(x15, x26)
+    O = paint(x15, x17)
     return O
 
 
