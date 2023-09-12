@@ -2868,8 +2868,7 @@ def solve_7447852a(I):
     x10 = pair(x4, x9)
     x11 = sfilter(x10, x8)
     x12 = mapply(first, x11)
-    x13 = recolor(FOUR, x12)
-    O = paint(I, x13)
+    O = fill(I, FOUR, x12)
     return O
 
 
