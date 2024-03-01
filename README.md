@@ -14,7 +14,7 @@ def solve_00d62c1b(I):
     borders = rbind(function=bordering, fixed=I)
     does_not_border = compose(outer=flip, inner=borders)
     enclosed = mfilter(container=black_objs, function=does_not_border)
-    O = fill(grid=I, value=FOUR, patch=x5)
+    O = fill(grid=I, value=FOUR, patch=enclosed)
     return O
 ```
 
