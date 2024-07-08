@@ -1,0 +1,12 @@
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[project]
+name = "arcdsl"
+version = "0.0.1"
+dependencies = ["tqdm"]
+requires-python = ">=3.11"
+authors = [name = "Michael Hodel", email = "mihodel@ethz.ch"]
+description = "Domain Specific Language for the Abstraction and Reasoning Corpus"
+readme = "README.md"

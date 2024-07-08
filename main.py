@@ -3,11 +3,11 @@ import json
 import inspect
 import tqdm
 
-import arc_types
-import constants
-import dsl
-import tests
-import solvers
+import arcdsl.arc_types
+import arcdsl.constants
+import arcdsl.dsl
+import arcdsl.tests
+import arcdsl.solvers
 
 
 
@@ -117,9 +117,9 @@ def test_solvers_correctness(data, solvers_module):
 
 def main():
     data = get_data(train=True)
-    run_dsl_tests(dsl, tests)
-    test_solvers_formatting(solvers, dsl)
-    test_solvers_correctness(data, solvers)
+    run_dsl_tests(arcdsl.dsl, arcdsl.tests)
+    test_solvers_formatting(arcdsl.solvers, arcdsl.dsl)
+    test_solvers_correctness(data, arcdsl.solvers)
 
 
 if __name__ == '__main__':
