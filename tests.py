@@ -1,3 +1,4 @@
+import sys
 from dsl import *
 
 
@@ -306,7 +307,15 @@ def test_papply():
  
 
 def test_mpapply():
-    assert mpapply(lambda x, y: frozenset({(x, (i, j)) for _, (i, j) in y}), (3, 4), frozenset({frozenset({(1, (0, 0))}), frozenset({(1, (1, 1)), (1, (0, 1))})})) == ((3, (0, 1)), (3, (1, 1)), (4, (0, 0)))
+    if sys.version_info >= (3, 8):
+        # Code for Python 3.8 and later
+        assert mpapply(lambda x, y: frozenset({(x, (i, j)) for _, (i, j) in y}), (3, 4), frozenset({frozenset({(1, (0, 0))}), frozenset({(1, (1, 1)), (1, (0, 1))})})) == ((3, (0, 1)), (3, (1, 1)), (4, (0, 0)))
+    else:
+        # Code for Python 3.7 and earlier
+        assert mpapply(lambda x, y: frozenset({(x, (i, j)) for _, (i, j) in y}), (3, 4), frozenset({frozenset({(1, (0, 0))}), frozenset({(1, (1, 1)), (1, (0, 1))})})) == ((3, (0, 0)), (4, (1, 1)), (4, (0, 1)))
+
+
+
  
 
 def test_prapply():
