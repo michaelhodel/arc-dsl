@@ -306,7 +306,21 @@ def test_papply():
  
 
 def test_mpapply():
-    assert mpapply(lambda x, y: frozenset({(x, (i, j)) for _, (i, j) in y}), (3, 4), frozenset({frozenset({(1, (0, 0))}), frozenset({(1, (1, 1)), (1, (0, 1))})})) == ((3, (0, 0)), (4, (1, 1)), (4, (0, 1)))
+    input_tuple: tuple[int, int] = (3, 4)
+    input_data: Tuple[Tuple[Cell,], Tuple[Cell, Cell]] = (
+        ((1, (0, 0)),),
+        ((1, (1, 1)), (1, (0, 1))),
+    )
+    expected: Tuple[Cell, Cell, Cell] = (
+        (3, (0, 0)),
+        (4, (1, 1)),
+        (4, (0, 1))
+    )
+    computed = mpapply(lambda x, y: tuple((x, (i, j))
+                       for _, (i, j) in y), input_tuple, input_data)
+    assert computed == expected
+
+
  
 
 def test_prapply():
