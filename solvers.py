@@ -5603,7 +5603,7 @@ def solve_6a1e5592(I):
     x11 = ofcolor(x4, ZERO)
     x12 = ofcolor(x4, TWO)
     x13 = rbind(multiply, TEN)
-    x14 = rbind(multiply, EIGHT)
+    x14 = rbind(multiply, FIVE)
     x15 = rbind(intersection, x12)
     x16 = rbind(intersection, x11)
     x17 = rbind(intersection, x10)
