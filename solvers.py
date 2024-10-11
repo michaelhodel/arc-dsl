@@ -5423,7 +5423,9 @@ def solve_4c5c2cf0(I):
     x11 = objects(x10, F, T, T)
     x12 = first(x11)
     x13 = objects(x10, T, T, T)
-    x14 = extract(x13, x6)
+    y1 = rbind(subgrid, x10)
+    y2 = compose(x5, y1)
+    x14 = extract(x13, y2)
     x15 = center(x14)
     x16 = subtract(x8, x15)
     x17 = shift(x12, x16)
@@ -5443,7 +5445,6 @@ def solve_4c5c2cf0(I):
     x31 = shift(x24, x30)
     O = paint(x18, x31)
     return O
-
 
 def solve_508bd3b6(I):
     x1 = width(I)
